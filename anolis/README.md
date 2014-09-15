@@ -1,4 +1,4 @@
-traitathon
+Anolis
 ==========
 
-for storing stuff associated with the trait group at the tree-for-all hackathon
+Analysis of anole ecomorphs
