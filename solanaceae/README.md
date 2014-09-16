@@ -3,7 +3,7 @@ traitathon
 
 Solanaceae - evolution of flower color
 
-Trait data: 
+Trait data (SolanaceaeTraits.csv): 
 0 = non-red flowers; 1 = red flowers
 
 Tree data (Solanaceae.tre): tree with branch lengths (substitutions per site)
