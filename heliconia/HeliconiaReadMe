@@ -2,7 +2,7 @@ Heliconia
  ==========
  
 Analysis of Heliconia morphological and biogeographic traits
-The data includes a phylogenetic tree with branch lengths (time in millions of years; heliconia.phy) and several character matrices (heliconia_morphology.csv and heliconia_biogeo.csv).
+The data includes a phylogenetic tree with branch lengths (time in millions of years; heliconia.nested-json) and several character matrices (heliconia_morphology.csv and heliconia_biogeo.csv).
 
 The goal of the analysis is to construct several workflows:
 
@@ -18,7 +18,7 @@ Analysis "Heliconia A"
 
 Analysis "Heliconia B"
 
-1. Start with phylogenetic tree heliconia.phy
+1. Start with phylogenetic tree heliconia.nested-json
 2. match tips to characters
 3. correlation of elevation and leaf lenghth or leaf width (independent contrasts)
 4. correlation of elavation and vegHabit (independent contrasts)
