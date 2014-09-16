@@ -14,4 +14,16 @@ for(i in 7:13)
 # glue traits and trees together
 heliContinuousTd<-make.treedata(heliTree, heliData[,c(1,7:13)])
 
-continuousCorrelation(heliContinuousTd)
+res<-continuousCorrelation(heliContinuousTd)
+anova(res[[1]])
+
+# phylogenetic signal
+
+signalTests<-list()
+for(i in 1:7) {
+	dd<-heliContinuousTd$dat[,i]
+	names(dd)<-rownames(heliContinuousTd$dat)
+	signalTests[[i]]<-physigArbor(heliContinuousTd$phy, dd, signalTest="Blomberg")
+	}
+	
+signalTests	
