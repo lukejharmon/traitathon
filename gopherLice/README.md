@@ -3,7 +3,9 @@ Gophers and their lice
 
 Cospeciation analysis of gophers and their lice.
 
-The data includes two phylogenetic trees (gophers: Gopher2_phyml.phy, lice: Lice_phy) and a matrix specifying the interactions among species (GopherLice_HafnerMatrix.csv).
+The data includes two phylogenetic trees (gophers: Gophers.phy, lice: Lice.phy) and a matrix specifying the interactions among species (GopherLice_HafnerMatrix.csv).
+
+There's also Gophers_OpenTree.phy, which is the phylogeny of gophers that were included Hafner et al. 1994, taken from Open Tree of Life.
 
 See <a href="http://tolweb.org/accessory/Cospeciation_of_Lice_and_Their_Hosts?acc_id=456">here </a> for an example.
 
