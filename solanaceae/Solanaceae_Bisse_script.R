@@ -1,3 +1,9 @@
+#' Title: Diversification analyses using BiSSE <br />
+#' Description: This script takes user-inputed trait and tree data, makes the tree ultrametric and then conducts BiSSE analyses <br />
+#' Parameters: treefile.phy <br />
+#' Parameters: traitfile.csv <br />
+#' Expected output: Estimated speciation, extinction and transition rates <br />
+
 #point to working directory
 
 setwd("~lib/Desktop/github/traitathon/solanaceae")
@@ -10,7 +16,7 @@ SolanaceaeTree<-read.tree("Solanaceae.phy")
 #check whether tree is ultrametric
 is.ultrametric(SolanaceaeTree)
 
-#check whether tree is ultrametric
+#check whether tree is binary
 is.binary.tree(SolanaceaeTree)
 
 #make tree ultrametric
