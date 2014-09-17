@@ -16,7 +16,7 @@ SolanaceaeTree<-read.tree("Solanaceae.phy")
 #check whether tree is ultrametric
 is.ultrametric(SolanaceaeTree)
 
-#check whether tree is ultrametric
+#check whether tree is binary
 is.binary.tree(SolanaceaeTree)
 
 #make tree ultrametric
