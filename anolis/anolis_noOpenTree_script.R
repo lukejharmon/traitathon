@@ -1,6 +1,7 @@
 # First set the correct working directory
 # setwd("~/Documents/openTreeHackathon/traitathon/anolis")
 require(aRbor)
+require(rotl)
 
 # read in anolis phylogenetic tree
 anoleTree<-read.tree("anolis.phy")
