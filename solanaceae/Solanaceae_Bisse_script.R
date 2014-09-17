@@ -1,3 +1,9 @@
+#' Title: Diversification analyses using BiSSE <br />
+#' Description: This script takes user-inputed trait and tree data, makes the tree ultrametric and then conducts BiSSE analyses <br />
+#' Parameters: treefile.phy <br />
+#' Parameters: traitfile.csv <br />
+#' Expected output: Estimated speciation, extinction and transition rates <br />
+
 #point to working directory
 
 setwd("~lib/Desktop/github/traitathon/solanaceae")

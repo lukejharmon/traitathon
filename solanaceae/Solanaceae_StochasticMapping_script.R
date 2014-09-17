@@ -1,3 +1,10 @@
+#' Title: Stochastic mapping of traits <br />
+#' Description: This script takes user-inputed trait and tree data, makes the tree ultrametric and then generates stochastic maps for the evolution of red and non-red flower color <br />
+#' Parameters: treefile.phy <br />
+#' Parameters: traitfile.csv <br />
+#' Expected output: Plot of tree with results of stochastic mapping <br />
+#' Expected output: Values showing average changes for trait across all trees <br />
+
 #point to working directory
 
 setwd("~lib/Desktop/github/traitathon/solanaceae")
