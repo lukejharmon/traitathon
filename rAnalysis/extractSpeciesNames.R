@@ -1,6 +1,7 @@
 # Given a trait matrix or a tree, this function will ideally extract species names
 # For a tree, it will just return the tip labels, so the tree tips should be the species names
 # For a trait matrix, it will search for a column containing species names based on the column name
+# Species names should not be rownames
 
 # Species names can subsequently be used to extract a tree from OpenTree,
 # or to get a trait matrix from a database, and so on.
@@ -33,5 +34,5 @@ get.spnames<-function(trait_df=NULL,tree=NULL){
   else{
     stop("Could not interpret file")
   }
-  return(species_names)
+  return(as.character(species_names))
 }
