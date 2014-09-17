@@ -35,4 +35,5 @@ plot_trait_dendrogram <- function(apetree, character_matrix, tree_type="phylogra
 	if (legend == TRUE) {
 		legend("bottomright", as.character(unique(characters)), fill=unique(characters), bty="n", border=FALSE, cex=legend_cex)
 	}
+ 
 }
