@@ -17,19 +17,14 @@ ottID<-nameMatches[,4]
 
 # Get tree step
 
-openTreeAnoles<-tol_induced_subtree(ott_ids=ottID)
-otAnoleTree <- read.tree(text=httr::content(openTreeAnoles)$subtree)
-
+otAnoleTree<-tol_induced_subtree(ott_ids=ottID)
 otAnoleTree <-compute.brlen(otAnoleTree)
 otAnoleTree <- multi2di(otAnoleTree)
 plot(otAnoleTree)
 
-# Rename data matrix to match ott tip names
+# Sort data matrix to match ott tip names
 nn<-strsplit(otAnoleTree$tip.label, split="_")
-id_tree_order<-character(length=100)
-for(i in 1:100) 
-	id_tree_order[i]<-nn[[i]][3]
-
+id_tree_order<-sapply(nn,function(x) x[3])
 id_character_order<-paste("ott",ottID, sep="")
 
 mm<-match(id_tree_order, id_character_order)
