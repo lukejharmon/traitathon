@@ -1,11 +1,10 @@
-#' snippet to extract .csv for plant, vertebrate, or invertebrate ToS dbs and rename columns
-
-#' @param tos_db ToS database to download, either plant, vertebrate, or invertebrate
-#' @return ToS database with reformatted headers
-#' @reference
-#' \url{http://treeofsex.org/}
-#' @examples
-#' GetDatabase("plant")
+#' GetDatabase.R
+#' extract .csv for plant, vertebrate, or invertebrate ToS dbs and rename columns<\n>
+#' parameter: tos_db, ToS database to download, either "plant", "vertebrate", or "invertebrate"
+#' expected output: ToS database with reformatted headers
+#' reference: http://treeofsex.org/
+#' examples: 
+#' plant_tos_db <- GetDatabase("plant")
 
 GetDatabase <- function(tos_db) {
 	

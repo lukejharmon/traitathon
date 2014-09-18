@@ -1,6 +1,7 @@
 # Given a trait matrix or a tree, this function will ideally extract species names
 # For a tree, it will just return the tip labels, so the tree tips should be the species names
 # For a trait matrix, it will search for a column containing species names based on the column name
+# Species names should not be rownames
 
 # Species names can subsequently be used to extract a tree from OpenTree,
 # or to get a trait matrix from a database, and so on.
@@ -16,12 +17,8 @@ get.spnames<-function(trait_df=NULL,tree=NULL){
   }
 # if the input is a data matrix, searches for species names using column names
   else if(class(trait_df)=="data.frame"){
-    # allows column head to be standard cap, uppercase, or lowercase
-    # note: make this more general
-    sp_head<-c("Species","Scientific name","Name")
-    sp_head_caps<-toupper(sp_head)
-    sp_head_lc<-tolower(sp_head)
-    sp_match<-which(is.element(colnames(trait_df),c(sp_head,sp_head_caps,sp_head_lc)))
+    sp_head<-c("species","scientific name","scientific_name","scientific.name","name")
+    sp_match<-grep(paste(sp_head,collapse="|"),colnames(trait_df),ignore.case=T)
     # if no columns match
     if(length(sp_match)<1){
       stop("Could not find column containing species")
@@ -37,5 +34,5 @@ get.spnames<-function(trait_df=NULL,tree=NULL){
   else{
     stop("Could not interpret file")
   }
-  return(species_names)
+  return(as.character(species_names))
 }
