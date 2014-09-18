@@ -9,10 +9,10 @@ anoleData<-read.csv("anolis_fullnames.csv")
 # fetch the tree from opentree
 
 # TNRS step
-nameMatches1<-tnrs_match_names(as.character(anoleData[1:50,1]))
-nameMatches2<-tnrs_match_names(as.character(anoleData[51:100,1]))
+split_names<-strsplit(as.character(anoleData[,1]),split="_")
+species_names<-sapply(split_names,function(x) paste(x[1],x[2],sep=" "))
+nameMatches<-tnrs_match_names(species_names)
 
-nameMatches<-rbind(nameMatches1, nameMatches2)
 ottID<-nameMatches[,4]
 
 # Get tree step
