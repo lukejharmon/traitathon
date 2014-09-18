@@ -12,6 +12,7 @@
 # Download/load packages
 #devtools::install_github("arborworkflows/aRbor")  #not building
 setwd("~/aRbor/trunk/R")
+system("svn update")
 sourcefiles <- system("ls ", intern=TRUE)
 for(i in sequence(length(sourcefiles))){
   print(i)
@@ -20,6 +21,7 @@ for(i in sequence(length(sourcefiles))){
 require(Reol)
 #devtools::install_github("fmichonneau/rotl")  #not building
 setwd("~/rotl/trunk/R")
+system("svn update")
 sourcefiles <- system("ls ", intern=TRUE)
 for(i in sequence(length(sourcefiles))){
   print(i)
