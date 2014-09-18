@@ -1,10 +1,15 @@
-# Given a trait matrix or a tree, this function will ideally extract species names
-# For a tree, it will just return the tip labels, so the tree tips should be the species names
-# For a trait matrix, it will search for a column containing species names based on the column name
-# Species names should not be rownames
+#' Description: Given a trait matrix or a tree, this function will flexibly extract species names
+#' For a tree, it will just return the tip labels, so the tree tips should be the species names
+#' For a trait matrix, it will search for a column containing species names based on the column name
+#' Species names can subsequently be used to extract a tree from OpenTree,
+#' or to get a trait matrix from a database, and so on.
 
-# Species names can subsequently be used to extract a tree from OpenTree,
-# or to get a trait matrix from a database, and so on.
+#' Important: In a data frame, this function assumes species names are not rownames
+#' and also that the entire scientific name (genus and species) is in a single column
+
+#' Parameters: trait_df (a trait matrix) XOR tree (a phylo object)
+#' Expected output: A character vector of species names
+#' Author: Shan Kothari (unfortunately)
 
 get.spnames<-function(trait_df=NULL,tree=NULL){
 # only allow either a tree or a trait matrix
