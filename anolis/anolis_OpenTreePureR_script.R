@@ -1,6 +1,9 @@
 # First set the correct working directory
 # setwd("~/Documents/openTreeHackathon/traitathon/anolis")
 require(aRbor)
+require(phytools)
+require(ape)
+require(dplyr)
 require(rotl)
 
 # get the data matrix
@@ -39,8 +42,3 @@ tdEcomorph<-select(td, ecomorph)
 # now reconstruct and plot ancestral states using aRbor
 ancestralStates<-aceArbor(tdEcomorph, charType="discrete", aceType="marginal")
 plot(ancestralStates)
-
-ecomorph<-anoleData[,"ecomorph"]
-names(ecomorph)<-anoleData[,1]
-
-ace(ecomorph, anoleTree, type="discrete")
