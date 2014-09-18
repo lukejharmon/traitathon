@@ -54,7 +54,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="header">
 <h1 class="title">walkthrough.R</h1>
 <h4 class="author"><em>alex</em></h4>
-<h4 class="date"><em>Thu Sep 18 10:09:09 2014</em></h4>
+<h4 class="date"><em>Thu Sep 18 10:21:41 2014</em></h4>
 </div>
 
 
@@ -67,10 +67,8 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <pre><code>## Warning: package 'subplex' was built under R version 3.1.1</code></pre>
 <pre><code>## Loading required package: Rcpp</code></pre>
 <pre class="r"><code>source('/Users/alex/GitHub/traitathon/treeOfSex/plot_trait_dendrogram.R')</code></pre>
-<p>Solanaceae walkthrough</p>
-<pre class="r"><code># Plotting solanaceae 
-
-sol_tree &lt;- read.tree(&quot;/Users/alex/GitHub/traitathon/solanaceae/Solanaceae.tre&quot;)
+<p>Plotting character states onto the Solanaceae</p>
+<pre class="r"><code>sol_tree &lt;- read.tree(&quot;/Users/alex/GitHub/traitathon/solanaceae/Solanaceae.tre&quot;)
 sol_char &lt;- read.csv(&quot;/Users/alex/GitHub/traitathon/solanaceae/SolanaceaeTraits.csv&quot;, row.names=1)</code></pre>
 <p>make sure the character matrix rows are in the same order as the tree tips</p>
 <pre class="r"><code>sol_char &lt;- sol_char[sol_tree$tip.label, ]</code></pre>
