@@ -55,9 +55,6 @@ TDstate <- select(TD, State)
 #' Stochastic map traits using asymmetrical model of character change
 StochasticMap <- aceArbor(TDstate, charType="discrete", discreteModelType="ARD", aceType="stochastic")
 
-#' Let's look at the transition rates
-StochasticMap$par
-
 #' Diversification analysis with BiSSE
 bisseSolanaceae <- bisseArbor(TDstate)
 
