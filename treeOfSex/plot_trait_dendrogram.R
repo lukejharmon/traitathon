@@ -18,11 +18,11 @@ plot_trait_dendrogram <- function(apetree, character_vector, tree_type="phylogra
 	# binary plot colors and legend 
 	if(isTRUE(binary_trait)) {
 		character_vector <- character_vector + 1
-		tipcols <- c("black","red")
+		tipcols <- c("lightblue","red")
 		tiplabels(col=tipcols[character_vector], pch=19, cex=tiplabel_cex)
 		
 		if(isTRUE(legend)) {
-			legend(legend_loc, as.character(unique(character_vector)), fill=unique(tipcols[character_vector]), bty="n", border=FALSE, cex=legend_cex)
+			legend(legend_loc, legend=as.character(unique(character_vector)), fill=unique(tipcols[character_vector]), bty="n", border=FALSE, cex=legend_cex)
 		}
 	}
 	
@@ -30,7 +30,7 @@ plot_trait_dendrogram <- function(apetree, character_vector, tree_type="phylogra
 	else {
 		tiplabels(col=character_vector, pch=19, cex=tiplabel_cex)
 		if(isTRUE(legend)) {
-			legend(legend_loc, as.character(unique(character_vector)), fill=as.numeric(unique(character_vector)), bty="n", border=FALSE, cex=legend_cex)
+			legend(legend_loc, legend=unique(character_vector), fill=unique(character_vector), bty="n", border=FALSE, cex=legend_cex)
 		}
 	}
 }
