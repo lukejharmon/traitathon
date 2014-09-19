@@ -1,12 +1,12 @@
-#' GetDatabase.R
+#' get_tos_database.R
 #' extract .csv for plant, vertebrate, or invertebrate ToS dbs and rename columns<\n>
 #' parameter: tos_db, ToS database to download, either "plant", "vertebrate", or "invertebrate"
 #' expected output: ToS database with reformatted headers
 #' reference: http://treeofsex.org/
 #' examples: 
-#' plant_tos_db <- GetDatabase("plant")
+#' plant_tos_db <- get_tos_database("plant")
 
-GetDatabase <- function(tos_db) {
+get_tos_database <- function(tos_db) {
 	
 	if (tos_db == "plant") {
 		cat("loading plant db\n")
