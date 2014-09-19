@@ -91,7 +91,7 @@ solanacea_sex <- as.factor(solanacea_sex)
 #' let's see if it worked...!
 plot_trait_dendrogram(sol_tree, solanacea_sex, tree_type="fan", tiplabel_cex=0.15, legend=TRUE, legend_loc="bottomleft", legend_cex=0.6)
 
-#' whoops. There are two conditions colored black; we need more colors in our color palette.
+#' Whoops. There are two conditions colored black; we need more colors in our color palette. Here's how we could fix that <br />
 palette(c("blue","red", "yellow","orange","purple","black","green","lightblue","grey"))
 plot_trait_dendrogram(sol_tree, solanacea_sex, tree_type="fan", tiplabel_cex=0.15, legend=TRUE, legend_loc="bottomleft", legend_cex=0.6)
 
