@@ -1,8 +1,17 @@
-#Traitbank source hack 
+##  --------------------------------- ##
+##                                    ##
+##       TraitBank Source Code        ##
+##    Very Primitive API Interface    ##
+##         written by B.Banbury       ##
+##             18 Sept 14             ##
+##                                    ##
+##  --------------------------------- ##
 
-library(Reol)
-library(rjson)
-library(RCurl)
+
+require(Reol)
+require(rjson)
+require(RCurl)
+require(ape)
 
 DownloadEOLtraits <- function (pages, to.file = TRUE, MyKey = NULL, verbose = TRUE, cache=2419200, ...) {
 #this will download EOL trait data json either to file or to R console (user)
