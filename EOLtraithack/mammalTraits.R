@@ -132,20 +132,52 @@ contMap(randomTree, trait, fsize=c(.1, 1), lwd=2)
 
 furry_studies <- studies_find_studies(property="ot:focalCladeOTTTaxonName", value="Mammalia")
 ( furry_ids <- unlist(furry_studies$matched_studies) )
-furry_metadata <- httr::content(get_study_meta(2647))
+
+
 library(ape)
-tr <- read.tree(text=httr::content(tr_string))
-plot(tr)
+allTreeData <- NULL
+for(i in sequence(length(furry_ids))){
+  furry_metadata <- httr::content(get_study_meta(furry_ids[[i]]))
+  lista <- unlist(furry_metadata$nexml$treesById)
+  lista <- lista[grep("ElementOrder", names(lista))]
+  for(j in sequence(length(unlist(lista)))){
+    tr_string <- get_study_tree(study=furry_ids[[i]], tree=unlist(lista)[[j]],format="newick")
+    tr_string <- gsub(" ", "_", tr_string)  #issues with spaces
+    tr_string <- gsub("'", "", tr_string)
+    tr <- try(read.tree(text=tr_string))
+    #plot(tr)
+    EOLids <- MatchTaxatoEOLID(tr$tip.label)
+    print(c(furry_ids[[i]], lista[j], length(tr$tip.label), length(which(!is.na(EOLids[,3])))))
+  }
+}
 
+setwd("~/mammalsEOLs2")
 
-( some_birds <- tol_induced_subtree(ott_ids=c(292466, 501678, 267845, 666104)))
-( tr <- read.tree(text=httr::content(some_birds)$subtree) )
+source("~/traitathon/trunk/EOLtraithack/traitbankSource.R")
 
-#none of these examples seem to be working for me.  :( 
+OTLmamms <- DownloadEOLtraits(EOLids[,3], to.file=TRUE)  
 
+files <- RemoveNAFiles(list.files(pattern="eol"))  #some eolids lead to missing info
 
+availableTraits <- WhichTraits(files)
 
+mass <- GetData("body mass", files, chatty=TRUE)
+mass <- mass[which(mass[,5] == "adult"),]
+mass[,1] <- sapply(mass[,1], FirstTwo)
+mass[,1] <- gsub(" ", "_", mass[,1])
+mass[which(mass[,4] == "kg"),][,3] <- as.numeric(mass[which(mass[,4] == "kg"),][,3])*1000
+mass[,3] <- log((as.numeric(mass[,3])))
+mass[which(mass[,4] == "kg"),][,4] <- rep("g", length(mass[which(mass[,4] == "kg"),][,4]))
+mass[,4] <- paste("log.", mass[,4], sep="")
 
+trait <- mass[,3]
+names(trait) <- mass[,1]
+
+newtree <- drop.tip(tr, name.check(tr, trait)$tree_not_data)
+trait <- trait[-which(names(trait) %in% name.check(newtree, trait)$data_not_tree)]
+trait <- trait[-which(duplicated(names(trait)))]
+newtree$edge.length <- rep(1, dim(newtree$edge)[1])
+contMap(newtree, trait, fsize=c(1, 1), lwd=2)
 
 
 
