@@ -20,7 +20,7 @@ nameMatches2<-tnrs_match_names(gsub("_", " ", as.character(SolanaceaeTraits[1001
 
 nameMatches<-rbind(nameMatches1, nameMatches2)
 
-ottID<-nameMatches[,4]
+ottID<-nameMatches$ott_id
 
 #' Remove NAs
 ottIDnoNA <- na.omit(ottID)
@@ -54,6 +54,9 @@ TDstate <- select(TD, State)
 
 #' Stochastic map traits using asymmetrical model of character change
 StochasticMap <- aceArbor(TDstate, charType="discrete", discreteModelType="ARD", aceType="stochastic")
+
+#' Plot stochastic mapping results on tree
+plot(StochasticMap)
 
 #' Diversification analysis with BiSSE
 bisseSolanaceae <- bisseArbor(TDstate)
