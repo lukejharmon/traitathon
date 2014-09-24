@@ -25,3 +25,5 @@ Analysis "Heliconia B"
 5. phylogenetic signal of all traits individually
 
 These analyses will test the use of potential source trees with branch lenghts from OpenTree in Arbor to be used in comparative methods
+
+Files HeliconiaSelectEditFullname.phy and heliconiaFullname.csv have been edited to use full scientific name to facilitate searching in other taxonomic services.

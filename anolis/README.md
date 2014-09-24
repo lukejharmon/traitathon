@@ -21,3 +21,5 @@ Analysis "Anolis B"
 4. Reconstruct ancestral states for ecomorph and make a plot.
 
 Comparing the results of these two workflows will give some insight into how well we can do by pulling from openTree.
+
+Added anolis_fullnames.phy to match the names in anolis_fullnames.csv and be useful when query third party services (full scientific names).
